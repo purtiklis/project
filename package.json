@@ -1,8 +1,8 @@
 {
-  "name": "dvhtml",
-  "version": "0.0.1-69",
-  "description": "TBA",
-  "homepage": "http://www",
+  "name": "Project",
+  "version": "0.0.1-0",
+  "description": "Project starter",
+  "homepage": "https://github.com/purtiklis/project",
   "keywords": [
     "html",
     "scss",
@@ -10,7 +10,7 @@
     "gulp",
     "js"
   ],
-  "repository": "test",
+  "repository": "purtiklis/project",
   "author": "Deivydas Vaseris",
   "license": "LIT",
   "devDependencies": {
