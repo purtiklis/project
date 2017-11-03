@@ -1,0 +1,87 @@
+.u-text-left {
+    @include bps {
+        text-align: left !important;
+    }
+}
+
+.u-text-center {
+    @include bps {
+        text-align: center !important;
+    }
+}
+
+.u-text-right {
+    @include bps {
+        text-align: right !important;
+    }
+}
+
+.u-text-justify {
+    @include bps {
+        text-align: justify !important;
+    }
+}
+
+.u-text-top {
+    @include bps {
+        vertical-align: top !important;
+    }
+}
+
+.u-text-baseline {
+    @include bps {
+        vertical-align: baseline!important;
+    }
+}
+
+.u-text-middle {
+    @include bps {
+        vertical-align: middle !important;
+    }
+}
+
+.u-text-bottom {
+    @include bps {
+        vertical-align: bottom !important;
+    }
+}
+
+.u-text-nowrap {
+    @include bps {
+        white-space: nowrap !important;
+    }
+}
+
+.u-text-truncate {
+    @include bps {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+td.u-text-truncate,
+th.u-text-truncate {
+    @include bps {
+        max-width: 0;
+    }
+}
+
+.u-text-break {
+    @include bps {
+        @include text-break;
+    }
+}
+
+.u-text-uppercase {
+    @include bps {
+        text-transform: uppercase !important;
+    }
+}
+
+.u-text-lowercase {
+    @include bps {
+        text-transform: lowercase !important;
+    }
+}

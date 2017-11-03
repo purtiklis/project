@@ -1,0 +1,38 @@
+.u-align-left  {
+    @include bps {
+        float: left;
+        margin-right: $gap;
+        margin-left: 0;
+        margin-bottom: $line-height;
+    }
+}
+
+.u-align-right {
+    @include bps {
+        float: right;
+        margin-left: $gap;
+        margin-right: 0;
+        margin-bottom: $line-height;
+    }
+}
+
+.u-align-center { 
+    @include bps {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: $line-height;
+        display: block;
+        float: none;
+    }
+}
+
+.u-align-justify {
+    @include bps {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: $line-height;
+        display: block;
+        float: none;
+    }
+    
+}

@@ -1,0 +1,29 @@
+<head>
+    <title>@@param-title</title>
+    <meta charset="utf-8">
+    <!--        <meta http-equiv="content-type" content="text/html; charset=utf-8" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!--        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no"/>-->
+
+
+<!--    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic,latin-ext" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <!--        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/style.css" />
+
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<!--    <script src="js/main.js"></script>-->
+
+    <!-- This notifies the client that there are assets we'll need later from a specific URL so the browser can resolve the DNS as quickly as possible -->
+    <link rel="dns-prefetch" href="//example.com">
+    <!-- Much like the DNS prefetch method, preconnect will resolve the DNS but it will also make the TCP handshake, and optional TLS negotiation -->
+    <link rel="preconnect" href="//example.com">
+    <!-- We're requesting and downloading that asset and storing it in the cache -->
+    <link rel="prefetch" href="image.png">
+    <!-- (High-priority prefetch) if the asset is required for the current page, or if it's needed as soon as possible, then it's probably best to use subresource, otherwise stick to prefetch. -->
+    <link rel="subresource" href="styles.css">
+    <!-- Gives us the ability to preemptively load all of the assets of a certain document -->
+    <link rel="prerender" href="//example.com">
+    <!-- No support currently -->
+    <link rel="preload" href="image.png">
+</head>

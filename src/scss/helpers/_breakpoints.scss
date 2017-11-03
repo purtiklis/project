@@ -1,0 +1,99 @@
+//480, 600, 840, 960, 1280, 1440, and 1600dp.
+// 360,400,480,600,720,840,960,1024,1280,1440,1600
+///*
+//    xs: 0,
+//    s: 600px,
+//    m: 1024px,
+//    l: 1440px,
+//    xl: 1600px
+//*/
+//$breakpoints: (
+//    mob: 0,
+//    tab: 768px,
+//    desktop: 992px
+//) !default;
+
+$breakpoints: (
+    mob: 0,
+    tab: 600px,
+    desktop: 960px
+) !default;
+
+@mixin mob {
+    @media (max-width: map-get($breakpoints, tab) - 1) {
+//    @media (max-width: 767px) {
+        @content; 
+    }  
+}
+
+@mixin mobtab {
+    @media (max-width: map-get($breakpoints, desktop) - 1) {
+//    @media (max-width: 991px) {
+        @content; 
+    }  
+}
+
+@mixin tabmob {
+    @include mobtab { @content }
+}
+
+@mixin tab {
+    @media (min-width: map-get($breakpoints, tab)) and (max-width: map-get($breakpoints, desktop) - 1) {
+//    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }  
+}
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, desktop)) {
+//    @media (min-width: 992px) {
+        @content;
+    }  
+}
+
+@mixin desk {
+    @include desktop { @content }
+}
+
+
+
+
+@mixin m {
+    &\@m {
+        @include mob { @content }
+    }
+}
+
+@mixin mt {
+    &\@mt {
+        @include mobtab { @content }
+    }
+}
+
+@mixin tm {
+    @include mt { @content }
+}
+
+@mixin t {
+    &\@t {
+        @include tab { @content }
+    }
+}
+
+@mixin d {
+    &\@d {
+        @include desktop { @content }
+    }
+}
+
+@mixin breakpoints {
+    @content;
+    @include m { @content }
+    @include mt { @content }
+    @include t { @content }
+    @include d { @content }
+}
+
+@mixin bps {
+    @include breakpoints { @content }
+}

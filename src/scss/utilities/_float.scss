@@ -1,0 +1,33 @@
+.u-float-left {
+    @include bps {
+        float: left !important;
+    }
+}
+.u-float-right {
+    @include bps {
+        float: right !important;
+    }
+}
+.u-float-none {
+    @include bps {
+        float: none !important;
+    }
+}
+.u-clear-left {
+    @include bps {
+        clear: left !important;
+    }
+}
+.u-clear-right {
+    @include bps {
+        clear: right !important;
+    }
+}
+.u-clear-both {
+    @include bps {
+        clear: both !important;
+    }
+}
+.u-clearfix {
+    @include clearfix;
+}

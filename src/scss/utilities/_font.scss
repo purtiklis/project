@@ -1,0 +1,39 @@
+//$font-weights: bold normal 100 200 300 400 500 600 700 800 900;
+$font-weights: bold normal !default;
+
+
+@each $value in $font-weights {
+    .u-font-#{$value} {
+        @include bps {
+            font-weight: $value !important; 
+        }
+    }
+}
+.u-font-italic {
+    @include bps {
+         font-style: italic !important;
+    };
+}
+.u-font-style-normal {
+    @include bps {
+         font-style: normal !important;
+    };
+}
+@if variable-exists(font-names) {
+    @each $name, $value in $font-names {
+        .u-font-#{$name} {
+            @include bps {
+                font-family: $value !important; 
+            }
+        }
+    }
+}
+@if variable-exists(font-sizes) {
+    @each $value in $font-sizes {
+        .u-font-#{$value} {
+            @include bps {
+                font-size: $value * 1px !important; 
+            }
+        }
+    }
+}

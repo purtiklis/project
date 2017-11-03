@@ -1,0 +1,68 @@
+.grid {
+    margin-right: -$gap/2;
+    margin-left: -$gap/2;
+    display: flex;
+    flex-wrap: wrap;
+    &__col {
+        @include bps {
+            flex-basis: 0;
+            flex-grow: 1;
+            min-height: 1px;
+            max-width: 100%;
+            width: 100%;
+            //    min-width: 300px;
+        }
+        &,
+        &\@m,
+        &\@mt,
+        &\@t,
+        &\@d {
+            padding-right: $gap/2;
+            padding-left: $gap/2;
+        }
+    }
+    &__row {
+        @include bps {
+            flex-basis: 100%;
+        }
+        &,
+        &\@m,
+        &\@mt,
+        &\@t,
+        &\@d {
+            padding-right: $gap/2;
+            padding-left: $gap/2;
+        }
+    }
+}
+
+.columns {
+    @include bps {
+        column-gap: $gap;
+    }
+    &--1 {
+        @include bps {
+            column-count: auto;
+        }
+    }
+    &--2 {
+        @include bps {
+            column-count: 2;
+        }
+    }
+    &--3 {
+        @include bps {
+            column-count: 3;
+        }
+    }
+    &--4 {
+        @include bps {
+            column-count: 4;
+        }
+    }
+    &--5 {
+        @include bps {
+            column-count: 5;
+        }
+    }
+}

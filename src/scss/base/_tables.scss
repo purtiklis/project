@@ -1,0 +1,86 @@
+table {
+
+}
+th,
+td {
+    text-align: left;
+    vertical-align: top;
+}
+.table {
+    width: 100%;
+    background-color: $color-bg;
+    
+    td, th {
+        padding: 10px 16px;
+        border-bottom: 1px solid $color-line;
+    }
+    
+    th {
+        vertical-align: middle;
+        text-align: left;
+        background-color: $color-bg;
+    }
+    
+    td {
+        vertical-align: top;
+        text-align: left;
+    }
+
+    &--bordered {
+        td, th {
+            border: 1px solid $color-line;
+        }
+    }
+
+    &--hashed {
+        td, th {
+            border-top: 1px solid $color-line;
+            border-left: 1px solid $color-line;
+            &:first-child {
+                border-left-width: 0;
+            }
+        }
+        tr:first-child {
+            td, th {
+                border-top-width: 0;
+            }
+        }
+    }
+
+    &--striped {
+        tr:nth-child(2n+2) {
+            background-color: mix($color-bg, $color-bg-light, 60%);
+        }
+    }
+
+    &--hover {
+        tr:hover {
+            background-color: $color-bg-light;
+            background-color: mix($color-bg, $color-bg-light, 20%);
+        }
+    }
+
+    &--sm {
+        td, th {
+            padding: 5px 8px;
+        }
+    }
+
+    &--justify {
+        td, th {
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    
+    &--stack {
+        // stack
+    }
+}
+//.u-table-shrink {
+//    width: 1%;
+//}
