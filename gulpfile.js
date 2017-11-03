@@ -183,21 +183,21 @@ gulp.task('push-changes', function (cb) {
     git.push('origin', 'master', cb);
 });
 
-//gulp.task('create-new-tag', function (cb) {
-//    let version = pkg().version;
-//    git.tag(version, 'Created Tag for version: ' + version, function (error) {
-//        if (error) {
-//            return cb(error);
-//        }
-//        git.push('origin', 'master', {args: '--tags'}, cb);
-//    });
-//});
+gulp.task('create-new-tag', function (cb) {
+    let version = pkg().version;
+    git.tag(version, 'Created Tag for version: ' + version, function (error) {
+        if (error) {
+            return cb(error);
+        }
+        git.push('origin', 'master', {args: '--tags'}, cb);
+    });
+});
 
-/*gulp.task('github-release', function(done) {
+gulp.task('github-release', function(done) {
     conventionalGithubReleaser({
         type: "oauth",
         token: 'xxx' // change this to your own GitHub token or use an environment variable
     }, {
         preset: 'test' // Or to any other commit message convention you use.
     }, done);
-});*/
+});
