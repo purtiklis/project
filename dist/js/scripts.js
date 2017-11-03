@@ -1,7 +1,7 @@
 /*!
  * Project (https://github.com/purtiklis/project)
- * Version: 0.0.1-3
- * Generated on: 2017-11-03 12:46:22
+ * Version: 0.0.1-4
+ * Generated on: 2017-11-03 12:50:18
  * Author: Deivydas Vaseris
  */
 
