@@ -25,6 +25,8 @@
 
 // RESETS
 @import 'libs/normalize';
+@import "base/root";
+@import 'base/reset';
 
 // UTILITIES
 @import 'utilities/align';
@@ -36,47 +38,161 @@
 @import 'utilities/radius'; 
 @import 'utilities/ratio'; 
 @import 'utilities/text';
-
-    
+@import 'utilities/width';
 
 // BASE
-@import "base/root";
-@import 'base/reset';
 @import 'base/typo';
-@import 'base/tables';
-@import 'base/grids';
+@import 'base/grid';
+@import 'base/cols';
+
+// STYLES
+@import 'styles/table';
+//https://getuikit.com/docs/list
+//http://getbootstrap.com/docs/4.0/components/list-group/
+
 
 // LAYOUTS 
+@import 'layouts/group';
 //    grid
-//    kazkas elementam deliot graziai ([button] [button] link           [button])
 
 // OBJECTS
-//    btn
-//    input
-//    select
+@import 'objects/btn'; // @TODO icons, checkbox/radio, loading
+@import 'objects/input'; // @TODO icons, colors, loading
+@import 'objects/select'; // @TODO -*-
+@import 'objects/textarea';// @TODO -*-
+//    checkbox/radio
 //    badge
-//    label
+//    tag [label]
+//    caret (in button)
+//    loading (in button)
 //    breadcrumb
 //    pagination [--dots]
     
 
 // COMPONENTS
-//    article
-//    forms
+//    btn-group
+//    input-group
+//    content [article]
+//    forms https://getuikit.com/docs/form
 //    dropdown
 //    modal
 //    lightbox
 //    slider
 //    tabs
-//    collapse
+//    collapse [--fade] [--slide] 
 
 // MODULES
 
 body {
     background: #fff;
 }
+
+
+.loader {
+    border: 2px solid red;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinAround 500ms infinite linear;
+    //https://bulma.io/documentation/elements/button/
+}
+
+   
+.collapse {
+    display: none;
+    &.in {
+        display: block;
+    }
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important; 
+}
+.is-transitioning,
+.collapsing {
+    position: relative;
+    overflow: hidden;
+    transition: height .3s ease;
     
-    
-/*
-    kazkur ikist visokius listu stilius (.s-list).. gal prie .s-table 
-    */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important; 
+}
+
+
+button {
+    height: 40px;
+    padding: 10px;
+}
+body {
+    padding: 20px;
+    &::after {
+        font: 13px/18px Arial;
+        text-align: center;
+        content: 'desktop';
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding: 5px 20px;
+        min-width: 100px;
+        z-index: 9999;
+        background: rgba(0,120,0,0.5);
+        color: #fff;
+        @include tab {
+            content: 'tablet';
+            background: rgba(0,0,255,0.5);
+        }
+        @include mob {
+            content: 'mobile';
+            background: rgba(255,0,0,0.5);
+        }
+    } 
+}
+
+
+.flex {
+    display: flex;
+    background: $color-gray-1;
+    color: $color-white;
+    align-items: stretch; 
+    &-1 {
+        background: $color-primary;
+        padding: 20px;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    &-2 {
+        background: $color-secondary;
+        padding: 25px;
+        flex: 1 0 auto;
+        display: flex;
+        align-items: stretch; 
+        flex-wrap: wrap;
+        &a {
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+        &b {
+            flex: 1 0 auto;
+            margin-right: 20px;
+        }
+        &c {
+            flex: 0 0 auto;
+            margin-right: 0px;
+        }
+    }
+}
+
+a { 
+    --var0: is-dark($color);
+    --var1: is-dark($color-primary);
+    --var2: is-dark($color-secondary);
+    --var3: is-dark($color-tertiary);
+} 

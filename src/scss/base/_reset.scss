@@ -124,6 +124,9 @@ select {
     vertical-align: middle;
     text-transform: none;
     outline: 0;
+    ::placeholder {
+        opacity: 1;
+    }
 //    appearance: none;
 }
 select {
@@ -162,6 +165,7 @@ textarea {
     border: 1px solid #000;
     border-radius: 0;
 }
+
 ////input[type="date"],
 ////input[type="time"],
 ////input[type="datetime-local"],

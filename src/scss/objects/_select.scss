@@ -1,0 +1,81 @@
+.o-select {
+    @extend .o-input;
+    
+    background-image: url(../img/select-trigger.svg);
+    background-position: right center; 
+    background-repeat: no-repeat;
+    
+    padding: 7px 34px 7px 8px;
+    
+    option {
+        padding: 5px 11px;
+    }
+    
+    &--xl {
+        height: 54px;
+        font-size: 1.2em;
+        padding: 14px 34px 14px 14px;
+        option {
+            padding: 5px 17px;
+        }
+    }
+ 
+    &--l {
+        height: 44px;
+        font-size: 1.1em;
+        padding: 10px 34px 10px 10px;
+        option {
+            padding: 5px 13px;
+        }
+    }
+
+    &--s {
+        height: 28px;
+        font-size: 0.9em;
+        padding: 3px 32px 3px 6px;
+        option {
+            padding: 2px 9px;
+        }
+    }
+
+    &--xs { 
+        height: 22px;
+        line-height: 18px;
+        font-size: 0.8em;
+        padding: 2px 32px 1px 4px;
+        option {
+            padding: 1px 5px;
+        }
+    }
+    
+    &--multiple {
+        height: auto;
+        padding: 0;
+        background-image: none;
+        option {
+            padding: 8px 12px 8px 10px;
+        }
+        &.o-select--xl {
+            option {
+                padding: 15px 14px 15px 14px;
+            }
+        }
+        &.o-select--l {
+            option {
+                padding: 11px 14px 11px 14px;
+            }
+        }
+        &.o-select--s {
+            option {
+                padding: 5px 10px 5px 6px;
+            }
+        }
+        &.o-select--xs {
+            option {
+                padding: 3px 6px 3px 4px;
+            }
+        }
+    }
+    
+    
+}

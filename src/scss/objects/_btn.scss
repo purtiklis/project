@@ -1,0 +1,322 @@
+.o-btn {
+    padding: 7px 16px;
+    border: 0 none;
+    margin: 0;
+    height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    font-size: $font-size;
+    line-height: 20px;
+    color: $color;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    text-decoration: none !important;
+    user-select: none;
+    
+    &[disabled] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &--xl {
+        height: 54px;
+        font-size: 1.2em;
+        padding: 16px 28px;
+    }
+
+    &--l {
+        height: 44px;
+        font-size: 1.1em;
+        padding: 11px 20px;
+    }
+
+    &--s {
+        height: 28px;
+        font-size: 0.90em;
+        padding: 3px 12px;
+    }
+    
+    &--xs { 
+        height: 22px;
+        line-height: 18px;
+        font-size: 0.80em;
+        padding: 1px 8px;
+    }
+    
+}
+//input,
+//button {
+//    &.o-btn {
+//        padding-top: 7px;
+//        padding-bottom: 6px;
+//        
+//        &--xs { 
+//            padding-top: 1px;
+//            padding-bottom: 0px;
+//        }
+//        
+//        &--s { 
+//            padding-top: 4px;
+//            padding-bottom: 2px;
+//        }
+//
+//        &--l {
+//            padding-top: 12px;
+//            padding-bottom: 10px;
+//        }
+//
+//        &--xl {
+//            padding-top: 17px;
+//            padding-bottom: 15px;
+//        }
+//    }
+//}
+
+
+
+
+// COLORS 
+
+@mixin btn-color(
+    $color, $background, $border, 
+    $color-hover, $background-hover, $border-hover, 
+    $color-active, $background-active, $border-active) {
+        color: $color !important;
+        background-color: $background !important;
+        border-color: $border !important;
+
+        &:hover {
+            color: $color-hover !important;
+            background-color: $background-hover !important;
+            border-color: $border-hover !important;
+        }
+        &.is-active,
+        &:active {
+            color: $color-active !important; 
+            background-color: $background-active !important;
+            border-color: $border-active !important;
+        }
+        &[disabled] {
+            color: $color !important;
+            background-color: $background !important;
+            border-color: $border !important;
+        }
+}
+
+@mixin btn-color-default(
+    $color, $background, $border: false, 
+    $color-hover: false, $background-hover: false, $border-hover: false, 
+    $color-active: false, $background-active: false, $border-active: false) {
+        @if not($border) { $border: $background; }
+        @if not($color-hover) { $color-hover: $color; }
+        @if not($background-hover) { $background-hover: lighten($background, 8%); }
+        @if not($border-hover) { $border-hover: $background-hover; }
+        @if not($color-active) { $color-active: $color; }
+        @if not($background-active) { $background-active: darken($background, 8%); }
+        @if not($border-active) { $border-active: $background-active; }
+        @include btn-color(
+            $color, $background, $border, 
+            $color-hover, $background-hover, $border-hover, 
+            $color-active, $background-active, $border-active
+            );
+}
+
+@mixin btn-color-outlined(
+    $color, $background: false, $border: false, 
+    $color-hover: false, $background-hover: false, $border-hover: false, 
+    $color-active: false, $background-active: false, $border-active: false) {
+        @if not($background) { $background: transparent; }
+        @if not($border) { $border: $color; }
+        @if not($color-hover) { $color-hover: $color; }
+        @if not($background-hover) { $background-hover: fade-out($color, 0.95); }
+        @if not($border-hover) { $border-hover: $border; }
+        @if not($color-active) { $color-active: $color; }
+        @if not($background-active) { $background-active: fade-out($color, 0.90); }
+        @if not($border-active) { $border-active: $border; }
+        @include btn-color(
+            $color, $background, $border, 
+            $color-hover, $background-hover, $border-hover, 
+            $color-active, $background-active, $border-active
+            );
+
+}
+
+@mixin btn-color-inverted(
+    $color, $background: false, $border: false, 
+    $color-hover: false, $background-hover: false, $border-hover: false, 
+    $color-active: false, $background-active: false, $border-active: false) {
+        @if not($background) { $background: $color-bg; }
+        @if not($border) { $border: transparent; }
+        @if not($color-hover) { $color-hover: $color; }
+        @if not($background-hover) { $background-hover: fade-out($background, 0.05); }
+        @if not($border-hover) { $border-hover: transparent; }
+        @if not($color-active) { $color-active: $color; }
+        @if not($background-active) { $background-active: fade-out($background, 0.1); }
+        @if not($border-active) { $border-active: transparent; }
+        @include btn-color(
+            $color, $background, $border, 
+            $color-hover, $background-hover, $border-hover, 
+            $color-active, $background-active, $border-active
+            );  
+}
+
+@mixin btn-color-outlined-mixed(
+    $color, $background: false, $border: false, 
+    $color-hover: false, $background-hover: false, $border-hover: false, 
+    $color-active: false, $background-active: false, $border-active: false) {
+        @if not($background) { $background: transparent; }
+        @if not($border) { $border: $color; }
+        @if not($color-hover) { $color-hover: $color-white; }
+        @if not($background-hover) { $background-hover: $color; }
+        @if not($border-hover) { $border-hover: $background-hover; }
+        @if not($color-active) { $color-active: $color-hover; }
+        @if not($background-active) { $background-active: darken($background-hover, 8%); }
+        @if not($border-active) { $border-active: $background-active; }
+        @include btn-color(
+            $color, $background, $border, 
+            $color-hover, $background-hover, $border-hover, 
+            $color-active, $background-active, $border-active
+            );
+}
+
+@mixin btn-color-inverted-mixed(
+    $color, $background: false, $border: false, 
+    $color-hover: false, $background-hover: false, $border-hover: false, 
+    $color-active: false, $background-active: false, $border-active: false) {
+        @if not($background) { $background: $color-bg; }
+        @if not($border) { $border: transparent; }
+
+        @if not($color-hover) { $color-hover: $color-white; }
+        @if not($background-hover) { $background-hover: $color; }
+        @if not($border-hover) { $border-hover: $background-hover; }
+        @if not($color-active) { $color-active: $color-hover; }
+        @if not($background-active) { $background-active: darken($background-hover, 8%); }
+        @if not($border-active) { $border-active: $background-active; }
+        @include btn-color(
+            $color, $background, $border, 
+            $color-hover, $background-hover, $border-hover, 
+            $color-active, $background-active, $border-active
+            );
+}
+
+@mixin btn-color-mixins($color) {
+    @include btn-color-default($color-white, $color);
+    &.o-btn--outlined {
+        @include btn-color-outlined($color);
+    }
+    &.o-btn--outlined-mixed {
+        @include btn-color-outlined-mixed($color);
+    }
+    &.o-btn--inverted {
+        @include btn-color-inverted($color);
+    }
+    &.o-btn--inverted-mixed {
+        @include btn-color-inverted-mixed($color);
+    }
+}
+
+.o-btn {
+    @include btn-color(
+        $color-dark, $color-gray-3, $color-gray-3,
+        $color-dark, $color-gray-2, $color-gray-2,
+        $color-dark, $color-gray-4, $color-gray-4
+    );
+}
+
+.o-btn--outlined {
+    @include btn-color-outlined($color-gray-7, false, $color-gray-4);
+}
+
+.o-btn--outlined-mixed {
+    @include btn-color-outlined-mixed(
+        $color-dark, false, $color-gray-4,
+        $color-dark, $color-gray-2, $color-gray-2,
+        $color-dark, $color-gray-4, $color-gray-4
+    );
+}
+
+.o-btn--inverted {
+    @include btn-color-inverted($color-dark);
+}
+
+.o-btn--inverted-mixed {
+    @include btn-color-inverted-mixed(
+        $color-dark, false, false,
+        $color-dark, $color-gray-3, $color-gray-3,
+        $color-dark, $color-gray-4, $color-gray-4
+        );
+}
+
+.o-btn--link {
+    @include btn-color(
+        $color-link, transparent, transparent,
+        $color-link, transparent, transparent,
+        $color-link, transparent, transparent
+    );
+    &:hover,
+    &.is-active,
+    &:active {
+        text-decoration: underline !important;
+    }
+}
+
+.o-btn--dark {
+    @include btn-color-mixins($color-dark);
+}
+
+.o-btn--light {
+    @include btn-color(
+        $color-dark, $color-gray-1, $color-gray-1,
+        $color-dark, $color-gray-2, $color-gray-2,
+        $color-dark, $color-gray-3, $color-gray-3
+    );
+    &.o-btn--outlined {
+        @include btn-color-outlined($color-gray-6, false, $color-gray-3);
+    }
+    &.o-btn--outlined-mixed {
+        @include btn-color-outlined-mixed(
+            $color-gray-6, false, $color-gray-3,
+            $color-dark, $color-gray-1, $color-gray-1,
+            $color-dark, $color-gray-3, $color-gray-3
+        );
+    }
+    &.o-btn--inverted {
+        @include btn-color-inverted($color-gray-6);
+    }
+    &.o-btn--inverted-mixed {
+        @include btn-color-inverted-mixed(
+            $color-gray-6, false, false,
+            $color-dark, $color-gray-1, $color-gray-1,
+            $color-dark, $color-gray-3, $color-gray-3
+        );
+    }
+}
+
+.o-btn--primary {
+    @include btn-color-mixins($color-primary);
+}
+
+.o-btn--secondary {
+    @include btn-color-mixins($color-secondary);
+}
+
+.o-btn--tertiary {
+    @include btn-color-mixins($color-tertiary);
+}
+
+.o-btn--danger {
+    @include btn-color-mixins($color-danger);
+}
+
+.o-btn--success {
+    @include btn-color-mixins($color-success);
+}
+
+.o-btn--warning {
+    @include btn-color-mixins($color-warning);
+}
+
+.o-btn--info {
+    @include btn-color-mixins($color-info);
+}

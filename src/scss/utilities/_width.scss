@@ -1,0 +1,9 @@
+@if variable-exists(width-values) {
+    @each $value in $width-values {
+        .u-width-#{$value} {
+            @include bps {
+                width: $value * 1%;
+            }
+    }
+}
+}

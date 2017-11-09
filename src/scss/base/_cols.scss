@@ -1,0 +1,36 @@
+.cols {
+    margin-bottom: $margin;
+    @include bps {
+        column-gap: $gap;
+    }
+    &--1 {
+        @include bps {
+            column-count: auto;
+        }
+    }
+    &--2 {
+        @include bps {
+            column-count: 2;
+        }
+    }
+    &--3 {
+        @include bps {
+            column-count: 3;
+        }
+    }
+    &--4 {
+        @include bps {
+            column-count: 4;
+        }
+    }
+    &--5 {
+        @include bps {
+            column-count: 5;
+        }
+    }
+    &--6 {
+        @include bps {
+            column-count: 5;
+        }
+    }
+}

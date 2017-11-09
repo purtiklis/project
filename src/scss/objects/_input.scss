@@ -1,0 +1,50 @@
+.o-input {
+    height: 36px;
+    border: 1px solid $color-input-line;
+    color: $color-input-color;
+    background-color: $color-input-bg;
+    border-radius: 3px;
+    padding: 7px 8px;
+    display: block;
+    width: 100%;
+    line-height: 20px;
+    
+    &[disabled] {
+        opacity: 0.75;
+        background-color: $color-input-bg-disabled;
+    }
+    &[readonly] {
+        background-color: fade-out($color-input-bg-disabled, 0.5);
+    }
+    
+    &::placeholder {
+        color: inherit;
+        opacity: 0.3;
+    }
+
+    &--xl {
+        height: 54px;
+        font-size: 1.2em;
+        padding: 16px 14px;
+    }
+
+    &--l {
+        height: 44px;
+        font-size: 1.1em;
+        padding: 11px 10px;
+    }
+
+    &--s {
+        height: 28px;
+        font-size: 0.9em;
+        padding: 3px 6px;
+    }
+    
+    &--xs { 
+        height: 22px;
+        line-height: 18px;
+        font-size: 0.8em;
+        padding: 1px 4px;
+    }
+}
+

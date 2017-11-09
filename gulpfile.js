@@ -104,9 +104,9 @@ gulp.task('scripts-minify', function(){
     //        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/js'));
 });
-
+ 
 gulp.task('del', function(){
-    return del(['dist/**/*']);
+    return del(['dist/**/*.html', 'dist/css', 'dist/js']);
 }); 
 
 gulp.task('connect', function() {
@@ -126,7 +126,8 @@ gulp.task('default', ['del'], function() {
 });
 
 
-// gulp build (default: prerelease)
+// gulp build (default: patch)
+// gulp build --t=prerelease
 // gulp build --t=patch
 // gulp build --t=minor
 // gulp build --t=major
@@ -156,7 +157,7 @@ gulp.task('build', function(){
 
 gulp.task('bump', function(){
     return gulp.src(['package.json'])
-        .pipe(bump({ type: argv.t || 'prerelease' }))
+        .pipe(bump({ type: argv.t || 'patch' }))
         .pipe(gulp.dest('.'));
 });
 
